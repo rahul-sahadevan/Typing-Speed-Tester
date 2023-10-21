@@ -19,8 +19,8 @@ function App(){
         <div>
             
            <Navbar/>
-           <Timersetting setTimerrange={setTimerrange} />
-           <Typerbox timerange={timerange} />
+           <Timersetting setTimerrange={setTimerrange} setTimeEnd={setTimeEnd} />
+           <Typerbox timerange={timerange} timeEnd={timeEnd} />
             <Randompara/>
             <Changepara/>
             <Footer/>

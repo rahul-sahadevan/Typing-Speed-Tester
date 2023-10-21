@@ -1,27 +1,28 @@
 import React,{useState,useEffect} from "react";
 
-function Timersetting({setTimerrange}){
+function Timersetting({setTimerrange,setTimeEnd}){
+ 
     
     const [timer, setTimer] = useState(15); // Initialize the timer to 15 seconds
     const [timerStart,setTimerstart] = useState(false);
+   
 
   const decrementTimer = () => {
     if (timerStart && timer > 0) {
       setTimer(timer - 1);
-      if(timer === 0){
-        setTimerstart(false);
-        
-      } // Reduce the timer by 1 second
+    
     }
-    else{
-      setTimerstart(true);
-    }
+    
+    
   };
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
       if (timerStart && timer > 0) {
         setTimer(timer - 1);
+      }
+      else{
+        setTimeEnd(true);
       }
     }, 1000);
 

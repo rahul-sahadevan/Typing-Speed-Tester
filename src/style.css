@@ -80,6 +80,27 @@ body{
     margin: 10px;
 
 }
+.result-div{
+    display: flex;
+    gap: 40px;
+}
+.word-per-min{
+    color:lightblue;
+    font-size: 50px;
+}
+.accuracy{
+    color: grey;
+    font-size: 50px;
+}
+.para-graph{
+    font-size: 20px;
+}
+.success{
+    color: #10D164;
+}
+.not-success{
+    color: red;
+}
 
 /* random para--------------- */
 .random-div{
