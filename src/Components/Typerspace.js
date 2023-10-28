@@ -126,6 +126,7 @@ function Typerbox({ timerange,timerStart }) {
         onKeyDown={handleKeydown}
         value={type}
         onChange={handleType}
+       disabled={!timerStart}
         // Disable input when the timer ends
       ></input>
       <br></br>
