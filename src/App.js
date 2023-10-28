@@ -3,27 +3,21 @@ import "./style.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Navbar from "./Components/Topbar";
-import Timersetting from "./Components/Timer";
-import Typerbox from "./Components/Typerspace";
-import Randompara from "./Components/Randompara";
-import Changepara from "./Components/Changepara";
-import Footer from "./Components/Footer";
+import Home from "./pages/Home";
+import { Routes,Route } from "react-router-dom/dist";
 
 
 
 
 function App(){
-    const [timerange, setTimerrange] = useState(15);
-    const [timeEnd,setTimeEnd] = useState(false);
+   
     return (
         <div>
-            
            <Navbar/>
-           <Timersetting setTimerrange={setTimerrange} setTimeEnd={setTimeEnd} />
-           <Typerbox timerange={timerange} timeEnd={timeEnd} />
-            <Randompara/>
-            <Changepara/>
-            <Footer/>
+           <Routes>
+                <Route path="/" element={ <Home/>}></Route>
+           </Routes>
+          
         </div>
     )
 }

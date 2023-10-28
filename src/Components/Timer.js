@@ -1,16 +1,18 @@
 import React,{useState,useEffect} from "react";
 
-function Timersetting({setTimerrange,setTimeEnd}){
- 
+function Timersetting({setTimerrange,timerStart,setTimerstart}){
+ console.log(timerStart)
     
     const [timer, setTimer] = useState(15); // Initialize the timer to 15 seconds
-    const [timerStart,setTimerstart] = useState(false);
+    
    
 
   const decrementTimer = () => {
-    if (timerStart && timer > 0) {
-      setTimer(timer - 1);
-    
+    if(timerStart === true){
+      setTimerstart(false)
+    }
+    else{
+      setTimerstart(true)
     }
     
     
@@ -22,14 +24,15 @@ function Timersetting({setTimerrange,setTimeEnd}){
         setTimer(timer - 1);
       }
       else{
-        setTimeEnd(true);
+        setTimerstart(false)
       }
+      
     }, 1000);
 
     return () => {
       clearInterval(timerInterval); 
     };
-  }, [timer]);
+  }, [timer,timerStart]);
 
 
     return (
