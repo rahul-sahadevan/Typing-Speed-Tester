@@ -43,9 +43,9 @@ function Typerbox({ timerange,timerStart }) {
         const correctWords = wordsTyped.filter((word, i) => word === wordsArray[i]);
         const incorrectWords = wordsTyped.filter((word, i) => word !== wordsArray[i]);
 
-        const wordCount = wordsTyped.length;
+        const wordCount = Math.round(currectword / 5) / (timerange / 60);
         console.log(currectword)
-        const accuracy = ((correctWords.length / wordCount) * 100).toFixed(2);
+        const accuracy = Math.round((correctWords.length / wordCount) * 100);
         setWpm(wordCount)
         setAccuracy(accuracy)
 
@@ -151,13 +151,13 @@ function Typerbox({ timerange,timerStart }) {
       <br></br>
       <div className="result-div">
         <br></br>
-        {timeEnd && (
+        {!timerStart &&(
           <p className="word-per-min">
             WPM: {wpm}
           </p>
         ) }
         <br></br>
-        {timeEnd && (
+        {!timerStart && (
           <p className="accuracy">
             Accuracy:
             {accu}%
